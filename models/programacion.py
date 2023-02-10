@@ -4,7 +4,7 @@ from odoo.exceptions import UserError, ValidationError
 class programacionvisita(models.Model):
     _name='visitas.programacion'
     _description = 'visitas programadas por institucion'
-
+    _rec_name = 'idiap'
 
     idiap = fields.Many2one(comodel_name='res.partner', domain=[('is_IAP','=',True),('estatus_id','in',[1,2,4,5])])
     fecha_programacion = fields.Date("Fecha de visita")
