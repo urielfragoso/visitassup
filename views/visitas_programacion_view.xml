@@ -11,12 +11,6 @@
             <form string="Visitas de supervision">
                 <header>
                 </header>
-                    <div class="alert  alert-primary" align="center" type="role">
-                        <h4>
-                            <h3>Programación de Visitas de Supervisión</h3>
-                        </h4>
-                    </div>
-                    <br></br>
                     <div class="oe_button_box" name="button_box">
                         <div class="row">
                             <div class="col-12">
@@ -27,7 +21,7 @@
                                         icon="fa-university" >
                                        <div class="o_form_field o_stat_info">
                                         <span class="o_stat_text">
-                                            Plan de visita
+                                            Plan de<br/> Visita
                                         </span>
                                     </div>
                                 </button>
@@ -38,7 +32,8 @@
 
                                     <div class="o_form_field o_stat_info">
                                         <span class="o_stat_text">
-                                            Documento 2
+                                            Visita de<br/>
+                                            Comisión
                                         </span>
                                     </div>
                                 </button>
@@ -52,25 +47,22 @@
 
                                     <div class="o_form_field o_stat_info">
                                         <span class="o_stat_text">
-                                            Documento 3
+                                            Acta <br/>
+                                            Circunstanciada
                                         </span>
                                     </div>
                                 </button>
-                                <button class="oe_stat_button customButtons"
-                                        type="object"
-                                        name="btn_documento4"
-                                        icon="fa-users">
 
-                                    <div class="o_form_field o_stat_info">
-                                        <span class="o_stat_text">
-                                            Documento 4
-                                        </span>
-                                    </div>
-                                </button>
                             </div>
                         </div>
                     </div>
 
+                    <div class="alert  alert-primary" align="center" type="role">
+                        <h4>
+                            <h3>Programación de Visitas de Supervisión</h3>
+                        </h4>
+                    </div>
+                    
                     <group>
                         <group>
                             <h3>Seleccione de la lista, la Institución que va a visitar</h3>
@@ -116,7 +108,8 @@
             <!-- aqui vamos a definir el tipo de vista-->
 
             <calendar string="Calendario de visitas" date_start="fecha_programacion" mode="month" color="idiap" event_open_popup="true" quick_add="False">
-                <field name="idiap"/>
+                <field name="idiap" string="Institución"/>
+                <field name="create_uid" string="Asesor:"/>
             </calendar>
 
         </field>
