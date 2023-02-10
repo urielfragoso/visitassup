@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--CATEGORIA DE SEGURIDAD  -->
+    <record id="module_visitas_category" model="ir.module.category">
+        <field name="name">Visitas de Supervisión</field>
+    </record>
+
+
+    <record id="captura_programacion_group_user" model="res.groups">
+        <field name="name">Programacion de vistas</field>
+        <field name="category_id" ref="module_visitas_category"/>
+        <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+    </record>
+
+
+</odoo>

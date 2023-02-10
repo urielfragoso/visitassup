@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+
+access_vistas_programacion,Acceso a programacion de vistas,model_visitas_programacion,captura_programacion_group_user,1,1,1,1
+access_vistas_plan_visita,Acceso a plan de visita,model_visitas_plan_visita,captura_programacion_group_user,1,1,1,1

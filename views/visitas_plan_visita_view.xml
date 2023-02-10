@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--VISTA DE FORMA-->
+    <record id="visitas_plan_visita_form_view" model="ir.ui.view">
+        <field name="name">visitas.plan.visita.form.view</field><!--NOMBRE DE LA VISTA -->
+        <field name="model">visitas.plan.visita</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+
+        <field name="arch" type="xml">
+
+            <!-- TIPO DE VISTA FORM-->
+            <form string="Visitas de supervision">
+
+                    <div class="alert  alert-primary" align="center" type="role">
+                        <h4>
+                            <h3>Generar documento de Plan de Visita</h3>
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <strong>Institución:</strong> <field name="idiap"/>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="oe_stat_button customButtons"
+                                        type="object"
+                                        name="btn_documento1"
+                                        icon="fa-print" >
+                                       <div class="o_form_field o_stat_info">
+                                        <span class="o_stat_text">
+                                            Plan de visita
+                                        </span>
+                                        </div>
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <br></br>
+                    <hr/>
+                        <group>
+                            <field name="fecha_elaboracion" widget="date" required="1"/>
+                        </group>
+                    <hr/>
+
+
+            </form>
+        </field>
+    </record>
+</odoo>

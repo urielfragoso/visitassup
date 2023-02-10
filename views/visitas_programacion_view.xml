@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--VISTA DE FORMA-->
+    <record id="visitas_programacion_form_view" model="ir.ui.view">
+        <field name="name">visitas.programacion.form.view</field><!--NOMBRE DE LA VISTA -->
+        <field name="model">visitas.programacion</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+
+        <field name="arch" type="xml">
+
+            <!-- TIPO DE VISTA FORM-->
+            <form string="Visitas de supervision">
+                <header>
+                </header>
+                    <div class="alert  alert-primary" align="center" type="role">
+                        <h4>
+                            <h3>Programación de Visitas de Supervisión</h3>
+                        </h4>
+                    </div>
+                    <br></br>
+                    <div class="oe_button_box" name="button_box">
+                        <div class="row">
+                            <div class="col-12">
+
+                                <button class="oe_stat_button customButtons"
+                                        type="object"
+                                        name="btn_documento1"
+                                        icon="fa-university" >
+                                       <div class="o_form_field o_stat_info">
+                                        <span class="o_stat_text">
+                                            Plan de visita
+                                        </span>
+                                    </div>
+                                </button>
+                                <button class="oe_stat_button customButtons"
+                                        type="object"
+                                        name="btn_documento2"
+                                        icon="fa-calculator">
+
+                                    <div class="o_form_field o_stat_info">
+                                        <span class="o_stat_text">
+                                            Documento 2
+                                        </span>
+                                    </div>
+                                </button>
+
+
+
+                                <button class="oe_stat_button customButtons"
+                                        type="object"
+                                        name="btn_documento3"
+                                        icon="fa-industry">
+
+                                    <div class="o_form_field o_stat_info">
+                                        <span class="o_stat_text">
+                                            Documento 3
+                                        </span>
+                                    </div>
+                                </button>
+                                <button class="oe_stat_button customButtons"
+                                        type="object"
+                                        name="btn_documento4"
+                                        icon="fa-users">
+
+                                    <div class="o_form_field o_stat_info">
+                                        <span class="o_stat_text">
+                                            Documento 4
+                                        </span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <group>
+                        <group>
+                            <h3>Seleccione de la lista, la Institución que va a visitar</h3>
+                        </group>
+                    </group>
+                    <hr/>
+                    <group>
+                        <!--<field name="apoderados_id" domain="[('partner_id','=',num_iap)]" widget="Selection"/>-->
+                        <field name="idiap" widget="selection" string="Lista de instituciones:"/>
+                    </group>
+                    <group>
+                        <field name="fecha_programacion" widget="date" required="1"/>
+                    </group>
+            </form>
+        </field>
+    </record>
+
+    <!--VISTA DE TREE -->
+    <record id="visitas_programacion_tree_view" model="ir.ui.view">
+        <field name="name">visitas.programacion.tree.view</field><!--NOMBRE DE LA VISTA -->
+        <field name="model">visitas.programacion</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+
+        <field name="arch" type="xml">
+            <!-- aqui vamos a definir el tipo de vista-->
+
+            <tree string="Solicitudes">
+                <field name="idiap" string="Institución programada"/>
+                <field name="fecha_programacion" string="Fecha de visita"/>
+                <field name="create_uid" string="Asesor que programó la visita"/>
+
+
+            </tree>
+
+        </field>
+    </record>
+
+    <!-- -->
+    <record id="visitas_programacion_calendar_view" model="ir.ui.view">
+        <field name="name">visitas.programacion.calendar.view</field><!--NOMBRE DE LA VISTA -->
+        <field name="model">visitas.programacion</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+
+        <field name="arch" type="xml">
+            <!-- aqui vamos a definir el tipo de vista-->
+
+            <calendar string="Calendario de visitas" date_start="fecha_programacion" mode="month" color="idiap" event_open_popup="true" quick_add="False">
+                <field name="idiap"/>
+            </calendar>
+
+        </field>
+    </record>
+</odoo>
