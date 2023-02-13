@@ -11,6 +11,7 @@
     'data': [
         'security/visitas_security.xml',
         'security/ir.model.access.csv',
+        'views/visitas_visitadores_view.xml',
         'views/visitas_programacion_view.xml',
         'views/visitas_plan_visita_view.xml',
         'views/visitas_menu_view.xml',
