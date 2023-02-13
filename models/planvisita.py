@@ -12,7 +12,15 @@ class planvisita(models.Model):
 
     refid_visita = fields.Many2one(comodel_name='visitas.programacion')
     idiap = fields.Many2one(related="refid_visita.idiap", store=True)
+    refid_domicilios =  fields.Many2one(comodel_name='cd.domicilios')
     fecha_elaboracion = fields.Date()
+    articulo_servasis = fields.Char()
+    articulo_perfilpob = fields.Char()
+    tipo_domicilio = fields.Selection([('1','OPERATIVO'),
+                                       ('2','FISCAL'),
+                                       ('3','OTRO')])
+
+    refid_visitador = fields.Many2one(comodel_name='visitas.cd.visitadores', domain=[("estatus", '=', True)])
 
 
 
