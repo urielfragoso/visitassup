@@ -40,6 +40,15 @@
                         <group>
                             <field name="fecha_elaboracion" widget="date" required="1"/>
                         </group>
+                        <group>
+                            <field name="refid_domicilios" widget="selection" required="1" string="Domicilio que será visitado"/>
+                        </group>
+                        <group>
+                            <field name="tipo_domicilio" string="Tipo de establecimiento" required="1"/>
+                        </group>
+                        <group>
+                            <field name="refid_visitador" string="Visitador" widget="selection" required="1"/>
+                        </group>
                     <hr/>
 
 

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--VISTA DE FORMA-->
+    <record id="visitas_visitadores_form_view" model="ir.ui.view">
+        <field name="name">visitas.visitadores.form.view</field><!--NOMBRE DE LA VISTA -->
+        <field name="model">visitas.cd.visitadores</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+
+        <field name="arch" type="xml">
+
+            <!-- TIPO DE VISTA FORM-->
+            <form string="Visitas de supervision">
+                <sheet>
+                    <div class="alert  alert-primary" align="center" type="role">
+                        <h4>
+                            <h3>Catálogo de visitadores</h3>
+                        </h4>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="refidusuario"/>
+                        </group>
+                        <group>
+                            <field name="estatus"/>
+                        </group>
+                    </group>
+
+
+
+                </sheet>
+
+
+            </form>
+        </field>
+    </record>
+
+    <record id="visitas_visitadores_tree_view" model="ir.ui.view">
+        <field name="name">visitas.visitadores.tree.view</field><!--NOMBRE DE LA VISTA -->
+        <field name="model">visitas.cd.visitadores</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+
+        <field name="arch" type="xml">
+
+            <!-- TIPO DE VISTA FORM-->
+            <tree string="Visitas de supervision">
+                <field name="refidusuario"/>
+                <field name="estatus"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

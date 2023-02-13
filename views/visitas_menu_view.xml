@@ -22,12 +22,25 @@
                 <field name="act_window_id" ref="action_programacion_visitas"/>
         </record>
 
+        <record id="programacion_visitas_calendar_view_action" model="ir.actions.act_window.view">
+                <field eval="10" name="sequence"/>
+                <field name="view_mode">calendar</field>
+                <field name="view_id" ref="visitassup.visitas_programacion_calendar_view"/>
+                <field name="act_window_id" ref="action_programacion_visitas"/>
+        </record>
 
+    <record id="action_alta_visitador" model="ir.actions.act_window">
+        <field name="name">Programacion de Visitas de Supervisión</field>
+        <field name="res_model">visitas.cd.visitadores</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain"></field>
+    </record>
 
 
     <menuitem name="Visitas de Supervisión" id="visitas_menu" sequence="0" web_icon="visitassup,static/description/icon.png" />
 
         <menuitem name="Programación" id="programa_visita" parent="visitas_menu" action="action_programacion_visitas" sequence="1" groups="captura_programacion_group_user"/>
+        <menuitem name="Alta de visitadores" id="alta_visitador" parent="visitas_menu" action="action_alta_visitador" sequence="2" />
 
 </odoo>
 
