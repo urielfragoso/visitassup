@@ -12,3 +12,14 @@ class planvisita(models.Model):
     estatus = fields.Boolean()
     no_visitador = fields.Char()
     no_notificador = fields.Char()
+
+
+
+
+class fraccionesvisita(models.Model):
+    _name='visitas.cd.fracciones'
+    _description = 'Tabla que contiene las fracciones del plan de visita'
+
+    fraccion = fields.Char()
+    estatus = fields.Boolean(default=True)
+

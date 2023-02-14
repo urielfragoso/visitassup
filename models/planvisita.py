@@ -21,7 +21,7 @@ class planvisita(models.Model):
                                        ('3','OTRO')])
 
     refid_visitador = fields.Many2many(comodel_name='visitas.cd.visitadores', domain=[("estatus", '=', True)])
-
+    refid_fracciones = fields.Many2many(comodel_name='visitas.cd.fracciones', domain=[("estatus", '=', True)])
 
 
     def btn_documento1(self):
