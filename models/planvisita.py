@@ -20,7 +20,7 @@ class planvisita(models.Model):
                                        ('2','FISCAL'),
                                        ('3','OTRO')])
 
-    refid_visitador = fields.Many2one(comodel_name='visitas.cd.visitadores', domain=[("estatus", '=', True)])
+    refid_visitador = fields.Many2many(comodel_name='visitas.cd.visitadores', domain=[("estatus", '=', True)])
 
 
 

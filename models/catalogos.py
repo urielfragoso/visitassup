@@ -10,3 +10,5 @@ class planvisita(models.Model):
 
     refidusuario = fields.Many2one(comodel_name='res.users', string='Asesor Asignado', domain=[("direccionuser_id", '=', 4)])
     estatus = fields.Boolean()
+    no_visitador = fields.Char()
+    no_notificador = fields.Char()
