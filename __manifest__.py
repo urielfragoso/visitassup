@@ -12,6 +12,7 @@
         'security/visitas_security.xml',
         'security/ir.model.access.csv',
         'views/visitas_orden_comision_view.xml',
+        'views/visitas_fracciones_view.xml',
         'views/visitas_visitadores_view.xml',
         'views/visitas_programacion_view.xml',
         'views/visitas_plan_visita_view.xml',
