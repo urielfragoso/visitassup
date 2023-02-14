@@ -3,5 +3,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
 access_vistas_programacion,Acceso a programacion de vistas,model_visitas_programacion,captura_programacion_group_user,1,1,1,1
 access_vistas_plan_visita,Acceso a plan de visita,model_visitas_plan_visita,captura_programacion_group_user,1,1,1,1
+access_vistas_catalogo_visitador,Acceso a catalogo visitador,model_visitas_cd_visitadores,captura_programacion_group_user,1,0,0,0
+access_vistas_orden_visita,Acceso a orden visita,model_visitas_orden_comision_visita,captura_programacion_group_user,1,1,1,0
 
 access_vistas_alta_visitador,Acceso a alta de visitador,model_visitas_cd_visitadores,alta_visitador_group_user,1,1,1,0
