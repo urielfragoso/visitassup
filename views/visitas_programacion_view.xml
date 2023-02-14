@@ -37,22 +37,6 @@
                                         </span>
                                     </div>
                                 </button>
-
-
-
-                                <button class="oe_stat_button customButtons"
-                                        type="object"
-                                        name="btn_documento3"
-                                        icon="fa-industry">
-
-                                    <div class="o_form_field o_stat_info">
-                                        <span class="o_stat_text">
-                                            Acta <br/>
-                                            Circunstanciada
-                                        </span>
-                                    </div>
-                                </button>
-
                             </div>
                         </div>
                     </div>

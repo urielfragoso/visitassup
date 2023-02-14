@@ -16,7 +16,7 @@
                         </h4>
                     </div>
                     <div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <strong>Institución:</strong> <field name="idiap"/>
                         </div>
                         <div class="col-md-2">
@@ -27,6 +27,18 @@
                                        <div class="o_form_field o_stat_info">
                                         <span class="o_stat_text">
                                             Orden de visita y comisión
+                                        </span>
+                                        </div>
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="oe_stat_button customButtons"
+                                        type="object"
+                                        name="btn_documento2"
+                                        icon="fa-print" >
+                                       <div class="o_form_field o_stat_info">
+                                        <span class="o_stat_text">
+                                            Acta circunstanciada
                                         </span>
                                         </div>
                             </button>
