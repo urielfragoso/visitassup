@@ -17,7 +17,7 @@
 
                                 <button class="oe_stat_button customButtons"
                                         type="object"
-                                        name="btn_documento1"
+                                        name="btn_planvisita"
                                         icon="fa-university" >
                                        <div class="o_form_field o_stat_info">
                                         <span class="o_stat_text">
@@ -27,7 +27,7 @@
                                 </button>
                                 <button class="oe_stat_button customButtons"
                                         type="object"
-                                        name="btn_documento2"
+                                        name="btn_ordenvisita"
                                         icon="fa-calculator">
 
                                     <div class="o_form_field o_stat_info">

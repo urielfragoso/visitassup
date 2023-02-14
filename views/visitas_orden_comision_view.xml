@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <odoo>
     <!--VISTA DE FORMA-->
-    <record id="visitas_plan_visita_form_view" model="ir.ui.view">
-        <field name="name">visitas.plan.visita.form.view</field><!--NOMBRE DE LA VISTA -->
-        <field name="model">visitas.plan.visita</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+    <record id="visitas_orden_comision_visita_form_view" model="ir.ui.view">
+        <field name="name">visitas.orden.comision.form.view</field><!--NOMBRE DE LA VISTA -->
+        <field name="model">visitas.orden.comision.visita</field><!-- UBICACION Y NOMBRE DEL MODULO -->
 
         <field name="arch" type="xml">
 
@@ -12,7 +12,7 @@
 
                     <div class="alert  alert-primary" align="center" type="role">
                         <h4>
-                            <h3>Generar documento de Plan de Visita</h3>
+                            <h3>Generar documento de Orden de Visita</h3>
                         </h4>
                     </div>
                     <div class="row">
@@ -22,11 +22,11 @@
                         <div class="col-md-2">
                             <button class="oe_stat_button customButtons"
                                         type="object"
-                                        name="btn_documento1"
+                                        name="btn_documento2"
                                         icon="fa-print" >
                                        <div class="o_form_field o_stat_info">
                                         <span class="o_stat_text">
-                                            Plan de visita
+                                            Orden de visita y comisión
                                         </span>
                                         </div>
                             </button>
@@ -38,16 +38,16 @@
                     <br></br>
                     <hr/>
                         <group>
-                            <field name="fecha_elaboracion" widget="date" required="1"/>
-                        </group>
-                        <group>
-                            <field name="refid_domicilios" widget="selection" required="1" string="Domicilio que será visitado"/>
-                        </group>
-                        <group>
-                            <field name="tipo_domicilio" string="Tipo de establecimiento" required="1"/>
-                        </group>
-                        <group>
-                            <field name="refid_visitador" string="Visitador"  required="1"/>
+                            <group>
+                                <field name="nooficio" string="No folio de oficio" required="1"/>
+                            </group>
+                            <group>
+                                <field name="fecha_elaboracion" widget="date" required="1" string="Fecha de elaboración"/>
+                            </group>
+                            <group>
+                                <field name="novisitasiap" string="No. visita de la IAP"/>
+                            </group>
+
                         </group>
                     <hr/>
 

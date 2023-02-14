@@ -17,7 +17,9 @@
                     </div>
                     <group>
                         <group>
-                            <field name="refidusuario"/>
+                            <field name="refidusuario" string="Visitador"/>
+                            <field name="no_visitador" string="No. credencial visitador"/>
+                            <field name="no_notificador" string="No. credencial notificador"/>
                         </group>
                         <group>
                             <field name="estatus"/>
@@ -41,8 +43,10 @@
 
             <!-- TIPO DE VISTA FORM-->
             <tree string="Visitas de supervision">
-                <field name="refidusuario"/>
-                <field name="estatus"/>
+                <field name="refidusuario" string="Visitador"/>
+                <field name="no_visitador" string="No. credencial visitador"/>
+                <field name="no_notificador" string="No. credencial notificador"/>
+
             </tree>
         </field>
     </record>
