@@ -13,6 +13,7 @@
         'security/ir.model.access.csv',
         'views/visitas_inmuebles_view.xml',
         'views/acta_visita_view.xml',
+        'views/visitas_calendario_view.xml',
         'views/visitas_orden_comision_view.xml',
         'views/visitas_fracciones_view.xml',
         'views/visitas_visitadores_view.xml',
