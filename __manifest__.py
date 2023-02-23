@@ -11,11 +11,16 @@
     'data': [
         'security/visitas_security.xml',
         'security/ir.model.access.csv',
+        'views/visitas_inmuebles_view.xml',
+        'views/acta_visita_view.xml',
         'views/visitas_orden_comision_view.xml',
         'views/visitas_fracciones_view.xml',
         'views/visitas_visitadores_view.xml',
         'views/visitas_programacion_view.xml',
         'views/visitas_plan_visita_view.xml',
+        'report/plan_visita.xml',
+        'report/orden_visita.xml',
+        'report/acta_visita.xml',
         'views/visitas_menu_view.xml',
     ],
 
