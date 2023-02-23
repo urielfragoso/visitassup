@@ -3,53 +3,43 @@ from odoo.exceptions import UserError, ValidationError
 
 
 
-class planvisita(models.Model):
-    _name='visitas.orden.comision.visita'
-    _description = 'Tabla que guarda datos del documento de orden de visit ay comision'
+class actas(models.Model):
+    _name='acta.visita'
+    _description = 'Tabla que guarda datos  del acta de la vista'
     _rec_name = 'idiap'
-
-
 
     refid_visita = fields.Many2one(comodel_name='visitas.programacion')
     idiap = fields.Many2one(related="refid_visita.idiap", store=True)
-    fecha_elaboracion = fields.Date()
-    nooficio = fields.Char()
-    novisitasiap = fields.Integer()
-    reviso = fields.Many2one(comodel_name='res.users', string="Revisó")
-    coordinator = fields.Many2one(comodel_name="res.users", string="Coordinador")
+    noiap = fields.Char(related="refid_visita.noiap", store=True)
 
-    fechanow=fields.Char(compute="_get_fecha_formato")
-    fechaformatvisita = fields.Char(compute="_get_fecha_formato_visita")
-    visitadores = fields.Char(compute="_get_visitadores")
-    folio_noti = fields.Char(compute="_get_folio_noti")
-    coordinaodor = fields.Char(compute="_get_nombre_coordinador")
-    c_email  = fields.Char(compute="_get_nombre_coordinador_email")
-    usu_creo = fields.Char(compute="_get_nombre_usuario")
-    usu_email  = fields.Char(compute="_get_nombre_usuario_email")
+
+    visitador = fields.Char(compute="_get_visitadores")
+    folio_visitaor = fields.Char(compute="_get_folio_visitadores")
+    fechaformatelabora = fields.Char(compute="_get_fecha_elaboracion")
+    no_oficio =  fields.Char(compute="_get_no_oficiio")
     domicilio = fields.Char(compute="_direccion")
-    fechaformatvigencia = fields.Char(compute="_get_fecha_formato_vigencia")
-
-
-
-    def btn_oordencomision(self):
-        return self.env.ref('visitassup.orden_visitas_report').report_action(self)
-
-    def _get_fecha_formato(self):
-        for record in self:
-            format_fecha = record.fecha_elaboracion.strftime("%d de %B del %Y")
-        record.fechanow = format_fecha
-
-    def _get_fecha_formato_visita(self):
-        for record in self:
-            format_fecha_v = record.refid_visita.fecha_programacion.strftime("%d de %B del %Y")
-        record.fechaformatvisita = format_fecha_v
+    fecha_programacion = fields.Char(compute="_get_fecha_programacion")
+    frac_acta= fields.Char(compute="_get_fraccion_acta")
+    def btn_circunstanciada(self):
+       return self.env.ref('visitassup.acta_visitas_report').report_action(self)
 
     def _get_visitadores(self):
+        vuelta_nombre = 0
+        almecena_nombre_1 = ''
         for record_v in self:
-            usuarios = self.env['visitas.plan.visita'].sudo().search([('id', '=', self.refid_visita.id)])
-            record_v.visitadores = usuarios.vistador
+            folio_vi = self.env['visitas.plan.visita'].sudo().search([('id', '=', self.refid_visita.id)])
+            for recordvisitador in folio_vi.refid_visitador.ids:
+                usuario = self.env['visitas.cd.visitadores'].sudo().search([('id', '=', recordvisitador)])
+                almecena_nombre = usuario.display_name
+                if vuelta_nombre == 0:
+                    almecena_nombre_1 = almecena_nombre
+                    vuelta_nombre = 1
+                else:
+                    almecena_nombre_1 = almecena_nombre_1 + ', ' + almecena_nombre + '\n'
 
-    def _get_folio_noti(self):
+            record_v.visitador = almecena_nombre_1
+
+    def _get_folio_visitadores(self):
         vuelta_folio = 0
         almecena_folio_1 = ''
         for record_v in self:
@@ -63,33 +53,29 @@ class planvisita(models.Model):
                 else:
                     almecena_folio_1 = almecena_folio_1 + ', ' + almecena_folio + '\n'
 
-            record_v.folio_noti = almecena_folio_1
+            record_v.folio_visitaor = almecena_folio_1
 
-    def _get_nombre_coordinador(self):
-        for record in self :
-            record.coordinaodor =self.coordinator.display_name
+    def _get_fecha_elaboracion(self):
+        for record in self:
+            folio_visi = self.env['visitas.orden.comision.visita'].sudo().search([('id', '=', self.refid_visita.id)])
+            format_fecha_ = folio_visi.fecha_elaboracion.strftime("%d de %B del %Y")
+        record.fechaformatelabora = format_fecha_
 
-    def _get_nombre_coordinador_email(self):
-        for record in self :
-            record.c_email =self.coordinator.email
-
-    def _get_nombre_usuario(self):
-        for record in self :
-            record.usu_creo =self.create_uid.display_name
-
-    def _get_nombre_usuario_email(self):
-        for record in self :
-            record.usu_email =self.create_uid.email
+    def _get_no_oficiio(self):
+        for record in self:
+            oficio_no = self.env['visitas.orden.comision.visita'].sudo().search([('id', '=', self.refid_visita.id)])
+            oficio = oficio_no.nooficio
+        record.no_oficio = oficio
 
     def _direccion(self):
         for record_v in self:
             domicilio = self.env['visitas.plan.visita'].sudo().search([('id', '=', self.refid_visita.id)])
             record_v.domicilio = domicilio.refid_domicilio.establecimiento
 
-    def _get_fecha_formato_vigencia(self):
+    def _get_fecha_programacion(self):
         for record in self:
-            format_fecha_vigencia = record.refid_visita.fecha_vigencia.strftime("%d de %B del %Y")
-        record.fechaformatvigencia = format_fecha_vigencia
+            fecha_progra = record.refid_visita.fecha_programacion
+            record.fecha_programacion = fecha_progra.strftime("%d de %B del %Y")
 
     def get_fraccion1(self):
         result = []

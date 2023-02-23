@@ -23,3 +23,21 @@ class fraccionesvisita(models.Model):
     fraccion = fields.Char()
     estatus = fields.Boolean(default=True)
 
+
+class atencionfinalinm(models.Model):
+    _name='visitas.cd.atencionfinal'
+    _description ='Catalogo de atencion final para asociarlos al inmueble'
+
+    nombre_atencion = fields.Char()
+    estatus = fields.Boolean(default=True)
+
+class cuotasrecuperacion(models.Model):
+    _name = 'visitas.cuotas.recuperacion'
+    _description = 'Se almacenran los proyectos por isntitución'
+
+    rev_id_plan = fields.Many2one('visitas.plan.visita')
+    proyecto = fields.Char()
+    estuio_cuotas = fields.Char()
+    tabulador = fields.Char()
+    montos  = fields.Char()
+    exentos = fields.Char()
