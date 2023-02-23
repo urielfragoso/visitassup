@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <odoo>
     <!--VISTA DE FORMA-->
-    <record id="visitas_fracciones_form_view" model="ir.ui.view">
-        <field name="name">visitas.fracciones.form.view</field><!--NOMBRE DE LA VISTA -->
-        <field name="model">visitas.cd.fracciones</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+    <record id="visitas_atencionfinal_form_view" model="ir.ui.view">
+        <field name="name">visitas.atencionfinal.form.view</field><!--NOMBRE DE LA VISTA -->
+        <field name="model">visitas.cd.atencionfinal</field><!-- UBICACION Y NOMBRE DEL MODULO -->
 
         <field name="arch" type="xml">
 
@@ -12,12 +12,12 @@
                 <sheet>
                     <div class="alert  alert-primary" align="center" type="role">
                         <h4>
-                            <h3>Catálogo de fracciones de la visita</h3>
+                            <h3>Catálogo de atencionfinal de la visita</h3>
                         </h4>
                     </div>
                     <group>
                         <group>
-                            <field name="fraccion" string="Fracción"/>
+                            <field name="nombre_atencion" string="Catalogo de atencion final"/>
                         </group>
                         <group>
                             <field name="estatus"/>
@@ -33,15 +33,15 @@
         </field>
     </record>
 
-    <record id="visitas_fracciones_tree_view" model="ir.ui.view">
-        <field name="name">visitas.fracciones.tree.view</field><!--NOMBRE DE LA VISTA -->
-        <field name="model">visitas.cd.fracciones</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+    <record id="visitas_atencionfinal_tree_view" model="ir.ui.view">
+        <field name="name">visitas.atencionfinal.tree.view</field><!--NOMBRE DE LA VISTA -->
+        <field name="model">visitas.cd.atencionfinal</field><!-- UBICACION Y NOMBRE DEL MODULO -->
 
         <field name="arch" type="xml">
 
             <!-- TIPO DE VISTA FORM-->
             <tree string="Visitas de supervision">
-                <field name="fraccion" string="Fracción del articulo 89"/>
+                <field name="nombre_atencion" string="Catalogo de atencion final"/>
             </tree>
         </field>
     </record>

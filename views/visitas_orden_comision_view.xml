@@ -22,7 +22,7 @@
                         <div class="col-md-2">
                             <button class="oe_stat_button customButtons"
                                         type="object"
-                                        name="btn_documento2"
+                                        name="btn_oordencomision"
                                         icon="fa-print" >
                                        <div class="o_form_field o_stat_info">
                                         <span class="o_stat_text">
@@ -31,18 +31,7 @@
                                         </div>
                             </button>
                         </div>
-                        <div class="col-md-2">
-                            <button class="oe_stat_button customButtons"
-                                        type="object"
-                                        name="btn_documento2"
-                                        icon="fa-print" >
-                                       <div class="o_form_field o_stat_info">
-                                        <span class="o_stat_text">
-                                            Acta circunstanciada
-                                        </span>
-                                        </div>
-                            </button>
-                        </div>
+
 
                     </div>
 
@@ -59,7 +48,15 @@
                             <group>
                                 <field name="novisitasiap" string="No. visita de la IAP"/>
                             </group>
-
+                            <group>
+                                <field name="reviso" string="Revisó" domain="[('direccionuser_id', '=', [4]),('puestojap_id', '=', [60])]"
+                                   options="{'no_quick_create':True, 'no_create': True, 'no_create_edit': True, 'no_open':True}"/>
+                            </group>
+                            <group>
+                                <field name="coordinator"  string="Cordinador"
+                                       domain="[('direccionuser_id', '=', 4),('puestojap_id', 'in', [88])]"
+                                       options="{'no_quick_create':True, 'no_create': True, 'no_create_edit': True, 'no_open':True}"/>
+                            </group>
                         </group>
                     <hr/>
 

@@ -32,11 +32,24 @@
 
                                     <div class="o_form_field o_stat_info">
                                         <span class="o_stat_text">
-                                            Visita de<br/>
+                                            Orden de visita<br/>
                                             Comisión
                                         </span>
                                     </div>
                                 </button>
+                                 <button class="oe_stat_button customButtons"
+                                        type="object"
+                                        name="btn_circunstanciada"
+                                        icon="fa-pencil-square">
+
+                                    <div class="o_form_field o_stat_info">
+                                        <span class="o_stat_text">
+                                            Acta circustanciada de visita de<br/>
+                                            supervisión
+                                        </span>
+                                    </div>
+                                </button>
+
                             </div>
                         </div>
                     </div>

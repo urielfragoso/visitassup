@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--VISTA DE FORMA-->
+    <record id="acta_visita_form_view" model="ir.ui.view">
+        <field name="name">acta.visita.form.view</field><!--NOMBRE DE LA VISTA -->
+            <field name="model">acta.visita</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+
+        <field name="arch" type="xml">
+
+            <!-- TIPO DE VISTA FORM-->
+            <form string="Visitas de supervision">
+
+                    <div class="alert  alert-primary" align="center" type="role">
+                        <h4>
+                            <h3>Generar Acta de visita de supervisión</h3>
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <strong>Institución:</strong> <field name="idiap"/><field name="noiap" />
+                        </div>
+                        <div class="col-md-2">
+                            <button class="oe_stat_button customButtons"
+                                        type="object"
+                                        name="btn_circunstanciada"
+                                        icon="fa-print" >
+                                       <div class="o_form_field o_stat_info">
+                                        <span class="o_stat_text">
+                                            Acta circunstanciada
+                                        </span>
+                                        </div>
+                            </button>
+                        </div>
+
+
+                    </div>
+
+
+                    <br></br>
+                    <hr/>
+
+                    <hr/>
+            </form>
+        </field>
+    </record>
+
+</odoo>
+
+
+
+
+
+
