@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="orden_visitas_report" model="ir.actions.report">
+        <field name="name">Orden de visita y comisión</field>
+        <field name="model">visitas.orden.comision.visita</field>
+        <field name="report_name">Orden_Visitas_report</field>
+        <field name="report_type">py3o</field>
+        <field name="py3o_filetype">docx</field>
+        <field name="module">visitassup</field>
+        <field name="py3o_template_fallback">report/orden_visitas_report.odt</field>
+        <field name="binding_type">report</field>
+        <field name="binding_model_id" eval="False"/>
+    </record>
+</odoo>
