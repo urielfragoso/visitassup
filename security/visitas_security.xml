@@ -20,4 +20,11 @@
     </record>
 
 
+    <record id="calendario_visitas_group_user" model="res.groups">
+        <field name="name">Calendario de Visitas</field>
+        <field name="category_id" ref="module_visitas_category"/>
+        <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+    </record>
+
+
 </odoo>
