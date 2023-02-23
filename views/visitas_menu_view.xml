@@ -43,14 +43,24 @@
         <field name="domain"></field>
     </record>
 
-
-    <menuitem name="Visitas de Supervisión" id="visitas_menu" sequence="0" web_icon="visitassup,static/description/icon.png" />
-
-        <menuitem name="Programación" id="programa_visita" parent="visitas_menu" action="action_programacion_visitas" sequence="1" groups="captura_programacion_group_user"/>
-
-        <menuitem name="Catalogo de visitas" id="alta_catalogo" parent="visitas_menu"  sequence="2" />
-            <menuitem name="Alta de visitadores" id="alta_visitador" parent="alta_catalogo" action="action_alta_visitador" sequence="1" />
-            <menuitem name="Alta de fracciones" id="alta_fracciones" parent="alta_catalogo" action="action_alta_fracciones" sequence="2" />
+    <record id="action_alta_atencionfinal" model="ir.actions.act_window">
+        <field name="name">Alta de catalogo de atencion final</field>
+        <field name="res_model">visitas.cd.atencionfinal</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain"/>
+    </record>
+    <record id="action_alta_establecimiento" model="ir.actions.act_window">
+        <field name="name">Alta de establecimiento</field>
+        <field name="res_model">visitas.inmuebles</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Visitas de Supervisión" id="visitas_menu" sequence="0" web_icon="visitassup,static/description/icon.png"/>
+    <menuitem name="Programación" id="programa_visita" parent="visitas_menu" action="action_programacion_visitas" sequence="1" groups="captura_programacion_group_user"/>
+    <menuitem name="Catalogo de visitas" id="alta_catalogo" parent="visitas_menu" sequence="2" groups="alta_visitador_group_user"/>
+    <menuitem name="Alta de visitadores" id="alta_visitador" parent="alta_catalogo" action="action_alta_visitador" sequence="1"/>
+    <menuitem name="Alta de fracciones" id="alta_fracciones" parent="alta_catalogo" action="action_alta_fracciones" sequence="2"/>
+    <menuitem name="Alta de Atencion final" id="alta_atencion" parent="alta_catalogo" action="action_alta_atencionfinal" sequence="3"/>
+    <menuitem name="Establecimientos" id="alta_establecimiento" parent="alta_catalogo" action="action_alta_establecimiento" sequence="4"/>
 
 </odoo>
 

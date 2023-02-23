@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--VISTA DE FORMA-->
+    <record id="visitas_inmuebles_form_view" model="ir.ui.view">
+        <field name="name">visitas.inmuebles.form.view</field><!--NOMBRE DE LA VISTA -->
+        <field name="model">visitas.inmuebles</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+
+        <field name="arch" type="xml">
+
+            <!-- TIPO DE VISTA FORM-->
+            <form string="Visitas de supervision">
+                <header>
+                </header>
+                    <div class="alert  alert-primary" align="center" type="role">
+                        <h4>
+                            <h3>Inmuebles Visitas de Supervisión</h3>
+                        </h4>
+                    </div>
+                    <group>
+                        <group>
+                            <h3>Seleccione de la lista, la institución para registrar el nuevo establecimiento</h3>
+                        </group>
+                    </group>
+                    <hr/>
+                    <group>
+                        <!--<field name="apoderados_id" domain="[('partner_id','=',num_iap)]" widget="Selection"/>-->
+                        <field name="idiap" widget="selection" string="Lista de instituciones:"/>
+                    </group>
+                    <group>
+                        <field name="establecimiento"  required="1"/>
+                    </group>
+                    <group>
+                        <field name="atencion_final"/>
+                    </group>
+                    <group>
+                        <field name="id_visitasinmueble"/>
+                    </group>
+            </form>
+        </field>
+    </record>
+
+    <!--VISTA DE TREE -->
+    <record id="visitas_inmuebles_tree_view" model="ir.ui.view">
+        <field name="name">visitas.programacion.tree.view</field><!--NOMBRE DE LA VISTA -->
+        <field name="model">visitas.inmuebles</field><!-- UBICACION Y NOMBRE DEL MODULO -->
+
+        <field name="arch" type="xml">
+            <!-- aqui vamos a definir el tipo de vista-->
+
+            <tree string="Solicitudes">
+                <field name="idiap" string="Institución programada"/>
+                <field name="noiap"/>
+                <field name="establecimiento" string="Establecimiento"/>
+                <field name="atencion_final" string="atencion final"/>
+                <field name="id_visitasinmueble" string="Id Visitas"/>
+            </tree>
+
+        </field>
+    </record>
+
+    <!-- -->
+
+</odoo>
