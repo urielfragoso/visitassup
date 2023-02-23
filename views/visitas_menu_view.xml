@@ -47,7 +47,7 @@
         <field name="name">Alta de catalogo de atencion final</field>
         <field name="res_model">visitas.cd.atencionfinal</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain"/>
+        <field name="domain"></field>
     </record>
     <record id="action_alta_establecimiento" model="ir.actions.act_window">
         <field name="name">Alta de establecimiento</field>
